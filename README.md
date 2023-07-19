@@ -5,5 +5,5 @@
 ```bash
 pip3 install cookiecutter
 
-# cookiecutter 
+cookiecutter https://github.com/caizhengxin/cookiecutter-rust-derive.git
 ```

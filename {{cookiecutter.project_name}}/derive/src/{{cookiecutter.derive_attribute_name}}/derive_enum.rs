@@ -1,7 +1,8 @@
 #[allow(unused_imports)]
 use virtue::{generate::Generator, parse::IdentOrIndex};
 use virtue::prelude::*;
-use crate::attribute::{ContainerAttributes, FieldAttributes};
+#[allow(unused_imports)]
+use super::attribute::{ContainerAttributes, FieldAttributes};
 
 
 #[allow(dead_code)]
@@ -101,7 +102,21 @@ impl DeriveEnum {
     // }
 
     pub fn generate_{{cookiecutter.derive_name_slug}}(&self, generator: &mut Generator) -> Result<()> {
-        // TODO
+        let crate_name = format!("{}::{{cookiecutter.derive_name}}", self.attributes.crate_name);        
+
+        generator
+            .impl_for(crate_name)
+            .generate_fn("hello_world")
+            .with_self_arg(FnSelfArg::RefSelf)
+            // .with_arg("args_name", "args_type")
+            .with_return_type("String")
+            .body(|fn_body| {
+                // self.attributes
+
+                fn_body.push_parsed("\"hello, world!\".to_string()")?;
+
+                Ok(())
+            })?;
 
         Ok(())
     }

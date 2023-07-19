@@ -1,11 +1,13 @@
 // #![feature(let_chains)]
 extern crate proc_macro;
 
-mod derive_enum;
-mod attribute;
+mod {{cookiecutter.derive_attribute_name}};
+
+use {{cookiecutter.derive_attribute_name}}::attribute::ContainerAttributes;
+use {{cookiecutter.derive_attribute_name}}::derive_enum;
+use {{cookiecutter.derive_attribute_name}}::derive_struct;
 
 use proc_macro::TokenStream;
-use attribute::ContainerAttributes;
 use virtue::prelude::*;
 
 
@@ -23,7 +25,7 @@ fn derive_{{cookiecutter.derive_name_slug}}_inner(input: TokenStream) -> Result<
         .unwrap_or_default();
 
     match body {
-        Body::Struct(_body) => {
+        Body::Struct(body) => {
             derive_struct::DeriveStruct {
                 fields: body.fields,
                 attributes,

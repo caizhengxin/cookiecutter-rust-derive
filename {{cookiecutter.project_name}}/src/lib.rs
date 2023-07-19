@@ -7,3 +7,8 @@ extern crate {{cookiecutter.project_slug}}_derive;
 
 #[cfg(feature = "{{cookiecutter.project_slug}}_derive")]
 pub use {{cookiecutter.project_slug}}_derive::{{cookiecutter.derive_name}};
+
+
+pub trait {{cookiecutter.derive_name}} {
+    fn hello_world(&self) -> String;
+}

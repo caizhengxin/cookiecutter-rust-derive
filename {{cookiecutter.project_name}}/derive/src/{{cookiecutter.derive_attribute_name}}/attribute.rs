@@ -22,7 +22,7 @@ pub struct ContainerAttributes {
 impl Default for ContainerAttributes {
     fn default() -> Self {
         Self {
-            crate_name: "::".to_string(),
+            crate_name: "{{cookiecutter.project_slug}}".to_string(),
         }
     }
 }
@@ -65,7 +65,6 @@ impl FromAttribute for ContainerAttributes {
 #[derive(Debug, Default)]
 pub struct FieldAttributes {
     pub name: Option<String>
-    pub example2: bool,
 }
 
 
@@ -83,7 +82,6 @@ impl FromAttribute for FieldAttributes {
                 ParsedAttribute::Tag(i) => {
                     // #xxx[xxx]
                     match i.to_string().as_str() {
-                        "example2" => result.example2 = true,
                         _ => return Err(Error::custom_at("Unknown field attribute", i.span())),
                     }
                 }
