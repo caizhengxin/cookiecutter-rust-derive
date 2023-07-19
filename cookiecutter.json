@@ -1,0 +1,23 @@
+{
+    "project_name": "example",
+    "project_slug": "{{ cookiecutter.project_name.lower()|replace(' ', '_')|replace('-', '_')|replace('.', '_')|trim() }}",
+    "derive_name": "",
+    "derive_attribute_name": "{{ cookiecutter.project_slug }}",
+    "description": "{{ cookiecutter.project_name.upper()|replace('-', ' ') }}!",
+    "author_name": "Author",
+    "email": "{{ cookiecutter.author_name.lower()|replace(' ', '-') }}@example.com",
+    "version": "0.1.0",
+    "code_hosting": [
+        "github",
+        "gitee",
+        "gitlab"
+    ],
+    "code_hosting_username": "Code hosting username.",
+    "open_source_license": [
+        "MIT",
+        "BSD",
+        "GPLv3",
+        "Apache Software License 2.0",
+        "Not open source"
+    ]
+}
