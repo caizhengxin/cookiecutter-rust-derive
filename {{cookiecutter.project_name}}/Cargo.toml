@@ -5,11 +5,31 @@ authors = [
     "{{cookiecutter.author_name}} <{{cookiecutter.email}}>"
 ]
 edition = "2021"
+description = "{{cookiecutter.description}}"
+repository = "https://{{cookiecutter.code_hosting}}.com/{{cookiecutter.code_hosting_username}}/{{cookiecutter.project_name}}"
+homepage = "https://{{cookiecutter.code_hosting}}.com/{{cookiecutter.code_hosting_username}}/{{cookiecutter.project_name}}"
+readme = "README.md"
+# https://crates.io/category_slugs
+categories = [
+]
+license-file = "LICENSE"
+include = [
+    "src/*",
+    "benches/*",
+    "examples/*",
+    "Cargo.toml",
+    "LICENSE*",
+    "README.md",
+]
 
 [workspace]
 members = [
     "derive"
 ]
+
+[profile.dev]
+opt-level = 1
+overflow-checks = false
 
 [features]
 derive = ["{{cookiecutter.project_slug}}_derive"]
@@ -17,8 +37,8 @@ derive = ["{{cookiecutter.project_slug}}_derive"]
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [dependencies]
-{{cookiecutter.project_slug}}_derive = { path = "derive", version = "0.1.0", optional = true }
+{{cookiecutter.project_slug}}_derive = { path = "derive", version = "{{cookiecutter.version}}", optional = true }
 thiserror = "*"
 
 [dev-dependencies]
-{{cookiecutter.project_slug}}_derive = { path = "derive", version = "0.1.0" }
+{{cookiecutter.project_slug}}_derive = { path = "derive", version = "{{cookiecutter.version}}" }

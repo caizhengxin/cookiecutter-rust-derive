@@ -1,12 +1,35 @@
 [package]
 name = "{{cookiecutter.project_slug}}_derive"
-version = "0.1.0"
+version = "{{cookiecutter.version}}"
+authors = [
+    "{{cookiecutter.author_name}} <{{cookiecutter.email}}>"
+]
 edition = "2021"
+description = "{{cookiecutter.description}}"
+repository = "https://{{cookiecutter.code_hosting}}.com/{{cookiecutter.code_hosting_username}}/{{cookiecutter.project_name}}"
+homepage = "https://{{cookiecutter.code_hosting}}.com/{{cookiecutter.code_hosting_username}}/{{cookiecutter.project_name}}"
+readme = "README.md"
+# https://crates.io/category_slugs
+categories = [
+]
+license-file = "LICENSE"
+include = [
+    "src/*",
+    "benches/*",
+    "examples/*",
+    "Cargo.toml",
+    "LICENSE*",
+    "README.md",
+]
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [lib]
 proc-macro = true
 
-# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+[profile.dev]
+opt-level = 1
+overflow-checks = false
 
 [dependencies]
 virtue = "*"
