@@ -12,7 +12,7 @@ readme = "README.md"
 # https://crates.io/category_slugs
 categories = [
 ]
-license-file = "LICENSE"
+license = "MIT OR Apache-2.0"
 include = [
     "src/*",
     "benches/*",
@@ -21,6 +21,8 @@ include = [
     "LICENSE*",
     "README.md",
 ]
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [workspace]
 members = [
@@ -34,11 +36,9 @@ overflow-checks = false
 [features]
 derive = ["{{cookiecutter.project_slug}}_derive"]
 
-# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
-
 [dependencies]
 {{cookiecutter.project_slug}}_derive = { path = "derive", version = "{{cookiecutter.version}}", optional = true }
-thiserror = "*"
+thiserror = "1.0"
 
 [dev-dependencies]
 {{cookiecutter.project_slug}}_derive = { path = "derive", version = "{{cookiecutter.version}}" }

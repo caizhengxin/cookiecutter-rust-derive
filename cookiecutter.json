@@ -13,12 +13,5 @@
         "gitee",
         "gitlab"
     ],
-    "code_hosting_username": "Code hosting username.",
-    "open_source_license": [
-        "MIT",
-        "BSD",
-        "GPLv3",
-        "Apache Software License 2.0",
-        "Not open source"
-    ]
+    "code_hosting_username": "Code hosting username."
 }

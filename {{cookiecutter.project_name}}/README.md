@@ -2,7 +2,7 @@
 
 [![Crates.io](https://img.shields.io/crates/v/{{cookiecutter.project_name}})](https://crates.io/crates/{{cookiecutter.project_name}})
 [![Crates.io](https://img.shields.io/crates/d/{{cookiecutter.project_name}})](https://crates.io/crates/{{cookiecutter.project_name}})
-[![License](https://img.shields.io/crates/l/{{cookiecutter.project_name}})](LICENSE)
+[![License](https://img.shields.io/crates/l/{{cookiecutter.project_name}})](LICENSE-MIT)
 
 ## Features
 
