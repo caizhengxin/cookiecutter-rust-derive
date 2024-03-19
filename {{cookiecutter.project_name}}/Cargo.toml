@@ -11,6 +11,10 @@ homepage = "https://{{cookiecutter.code_hosting}}.com/{{cookiecutter.code_hostin
 readme = "README.md"
 # https://crates.io/category_slugs
 categories = [
+    "development-tools",
+]
+keywords = [
+    "{{cookiecutter.project_name}}",
 ]
 license = "MIT OR Apache-2.0"
 include = [

@@ -11,15 +11,18 @@ homepage = "https://{{cookiecutter.code_hosting}}.com/{{cookiecutter.code_hostin
 readme = "README.md"
 # https://crates.io/category_slugs
 categories = [
+    "development-tools",
 ]
-license-file = "LICENSE"
+keywords = [
+    "{{cookiecutter.project_name}}",
+]
+license = "MIT OR Apache-2.0"
 include = [
     "src/*",
-    "benches/*",
-    "examples/*",
+    "../examples/*",
     "Cargo.toml",
     "LICENSE*",
-    "README.md",
+    "../README.md",
 ]
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
@@ -27,9 +30,5 @@ include = [
 [lib]
 proc-macro = true
 
-[profile.dev]
-opt-level = 1
-overflow-checks = false
-
 [dependencies]
-virtue = "*"
+virtue = "0.0"
